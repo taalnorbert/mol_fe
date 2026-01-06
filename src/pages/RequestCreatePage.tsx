@@ -13,7 +13,6 @@ import RequestDurationStep from "../components/requestCreatePage/steps/RequestDu
 import RequestPeriodStep from "../components/requestCreatePage/steps/RequestPeriodStep";
 import RequestReasonStep from "../components/requestCreatePage/steps/RequestReasonStep";
 import RequestedDataStep from "../components/requestCreatePage/steps/RequestedDataStep";
-import AgreeTermsStep from "../components/requestCreatePage/steps/AgreeTermsStep";
 
 const RequestCreatePage: React.FC = () => {
     const { t } = useTranslation();
