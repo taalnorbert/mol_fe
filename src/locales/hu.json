@@ -1,72 +1,77 @@
 {
     "sideBarOptions": {
         "home": "Főoldal",
-        "newRequest": "Új adatlekérési kérelem",
-        "listRequests": "Adatlekérési kérelmeim"
+        "newRequest": "Új igénylés",
+        "listRequests": "Igényléseim"
     },
     "wizard": {
         "next": "Tovább",
         "back": "Vissza",
-        "submit": "Kérvény elküldése",
-        "submitting": "Küldés..."
+        "submit": "Igénylés elküldése",
+        "submitting": "Küldés...",
+        "success": {
+            "title": "Sikeresen beküldve!",
+            "message": "Az igénylése sikeresen beküldésre került. Hamarosan értesítjük az elbírálás eredményéről.",
+            "newRequest": "Új igénylés létrehozása"
+        }
     },
     "requestCreate": {
-        "title": "Törzsadatbázis - Adatigénylés",
+        "title": "Minta - IT Eszközigénylés",
         "steps": {
-            "systemInfo": "Rendszer",
-            "systemInfoDescription": "Adja meg az adatkérő rendszer adatait",
+            "systemInfo": "Projekt",
+            "systemInfoDescription": "Adja meg a projekt adatait",
             "contactInfo": "Kontakt",
             "contactInfoDescription": "Adja meg a felelős kontakt személy adatait",
             "requestType": "Típus",
-            "requestTypeDescription": "Válassza ki az adatkérés típusát",
+            "requestTypeDescription": "Válassza ki az igénylés típusát",
             "requestTimeframe": "Időtartam",
-            "requestTimeframeDescription": "Válassza ki az adatkérés időtartamát",
+            "requestTimeframeDescription": "Válassza ki az igénylés időtartamát",
             "requestPeriod": "Időszak",
-            "requestPeriodDescription": "Adja meg az adatkérési időszak kezdetét",
+            "requestPeriodDescription": "Adja meg az igénylés kezdő dátumát",
             "requestReason": "Indoklás",
-            "requestReasonDescription": "Adja meg az adatkérés indoklását",
+            "requestReasonDescription": "Adja meg az igénylés indoklását",
             "agreeTerms": "Feltételek",
             "agreeTermsDescription": "Fogadja el a feltételeket a folytatáshoz",
-            "requestedData": "Adatok",
-            "requestedDataDescription": "Válassza ki az igényelt adatokat"
+            "requestedData": "Eszközök",
+            "requestedDataDescription": "Válassza ki az igényelt eszközöket"
         },
-        "requestedDataPlaceholder": "Az igényelt adatok kiválasztása ide kerül...",
+        "requestedDataPlaceholder": "Az igényelt eszközök kiválasztása ide kerül...",
         "form": {
-            "serviceName": "Adatkérő rendszer neve",
-            "responsibleOrg": "Adatkérő rendszer üzemeltetésért felelős szervezet",
-            "responsiblePersonName": "Adatkérő rendszer üzemeltetésért felelős kontakt személy neve",
-            "responsiblePersonEmail": "Adatkérő rendszer üzemeltetésért felelős kontakt személy e-mail címe",
-            "requestType": "Adatkérés típusa",
+            "serviceName": "Projekt neve",
+            "responsibleOrg": "Igénylő szervezeti egység",
+            "responsiblePersonName": "Igénylő személy neve",
+            "responsiblePersonEmail": "Igénylő személy e-mail címe",
+            "requestType": "Igénylés típusa",
             "requestTypeOptions": {
-                "eseti": "Eseti",
-                "folyamatos": "Folyamatos"
+                "eseti": "Egyszeri",
+                "folyamatos": "Tartós"
             },
-            "requestTimeframe": "Adatkérés időtartama",
+            "requestTimeframe": "Igénylés időtartama",
             "requestTimeframeOptions": {
-                "meghatarozott": "Meghatározott",
-                "folyamatosan": "Folyamatosan"
+                "meghatarozott": "Meghatározott ideig",
+                "folyamatosan": "Határozatlan ideig"
             },
-            "requestPeriodStart": "Adatkérési időszak kezdete",
-            "requestReason": "Adatkérés indoklása",
-            "agreeTerms": "Az űrlap beküldésével elfogadom, hogy a kapcsolódó adatkezelési tájékoztatót köteles vagyok kiegészíteni az igényelt adatokkal.",
-            "dataScope": "Adatok köre",
+            "requestPeriodStart": "Igénylés kezdete",
+            "requestReason": "Igénylés indoklása",
+            "agreeTerms": "Az igénylés beküldésével elfogadom, hogy az eszközök használatára vonatkozó szabályzatot betartom.",
+            "dataScope": "Eszköz kategória",
             "dataCategories": {
-                "student": "Hallgató",
-                "employee": "Alkalmazott"
+                "hardware": "Hardver",
+                "software": "Szoftver"
             },
             "filterByName": "Szűrés név alapján",
-            "filterByNamePlaceholder": "Keress az adat nevére...",
-            "selectedCount": "Kiválasztva: {{count}} adat",
+            "filterByNamePlaceholder": "Keress az eszköz nevére...",
+            "selectedCount": "Kiválasztva: {{count}} eszköz",
             "activeFiltersCount": "Aktív szűrők: {{count}}",
             "selectCategoryFirst": "Válasszon ki legalább egy kategóriát a fenti lehetőségek közül.",
-            "availableData": "Elérhető adatok",
-            "selectedData": "Kiválasztott adatok",
-            "allDataSelected": "Az összes elérhető adat ki van választva.",
+            "availableData": "Elérhető eszközök",
+            "selectedData": "Kiválasztott eszközök",
+            "allDataSelected": "Az összes elérhető eszköz ki van választva.",
             "selectedDataTable": {
-                "filterColumn": "Szűrési feltételek",
+                "filterColumn": "Konfiguráció",
                 "actionsColumn": "Műveletek",
-                "noFilter": "Nincs szűrő",
-                "editFilter": "Szűrő szerkesztése",
+                "noFilter": "Nincs beállítva",
+                "editFilter": "Konfiguráció szerkesztése",
                 "remove": "Eltávolítás"
             },
             "filterSummary": {
@@ -76,10 +81,10 @@
                 "to": "Eddig"
             },
             "dataTable": {
-                "nameColumn": "Adat neve",
+                "nameColumn": "Eszköz neve",
                 "descriptionColumn": "Leírás",
                 "selectAll": "Összes kiválasztása",
-                "noData": "Nincs megjeleníthető adat",
+                "noData": "Nincs megjeleníthető eszköz",
                 "filter": "Szűrő",
                 "filtered": "Szűrt",
                 "openFilter": "Szűrő megnyitása",
@@ -87,7 +92,7 @@
                 "remove": "Eltávolítás"
             },
             "filterModal": {
-                "title": "Szűrési feltételek",
+                "title": "Konfiguráció beállítása",
                 "textContains": "Szöveg tartalmazza",
                 "textContainsPlaceholder": "Írja be a keresett szöveget...",
                 "textEquals": "Szöveg pontosan egyezik",
@@ -102,11 +107,11 @@
                 "dateFrom": "Dátum kezdete",
                 "dateTo": "Dátum vége",
                 "selectOptions": "Válasszon értékeket",
-                "noFiltersAvailable": "Ehhez az adattípushoz nem érhető el szűrés.",
-                "sampleData": "Mintaadatok",
+                "noFiltersAvailable": "Ehhez az eszközhöz nem érhető el konfiguráció.",
+                "sampleData": "Elérhető készlet",
                 "apply": "Alkalmaz",
                 "cancel": "Mégse",
-                "clearFilter": "Szűrő törlése"
+                "clearFilter": "Konfiguráció törlése"
             },
             "pagination": {
                 "showing": "Megjelenítve: {{start}}-{{end}} / {{total}}",
@@ -114,19 +119,19 @@
                 "next": "Következő"
             },
             "required": "Kötelező mező",
-            "requiredData": "Legalább egy adattípust ki kell választani",
+            "requiredData": "Legalább egy eszközt ki kell választani",
             "invalidEmail": "Érvénytelen e-mail cím",
             "mustAgree": "El kell fogadnia a feltételeket",
             "errors": {
-                "serviceName": "A rendszer neve kötelező",
-                "responsibleOrg": "A felelős szervezet megadása kötelező",
-                "responsiblePersonName": "A felelős személy neve kötelező",
+                "serviceName": "A projekt neve kötelező",
+                "responsibleOrg": "Az igénylő szervezeti egység megadása kötelező",
+                "responsiblePersonName": "Az igénylő személy neve kötelező",
                 "responsiblePersonEmail": "Érvénytelen e-mail cím",
-                "requestType": "Az adatkérés típusa kötelező",
-                "requestTimeframe": "Az adatkérés időtartama kötelező",
-                "requestPeriodStart": "Az adatkérési időszak kezdete kötelező",
-                "requestedData": "Legalább egy adattípust ki kell választani",
-                "requestReason": "Az adatkérés indoklása kötelező",
+                "requestType": "Az igénylés típusa kötelező",
+                "requestTimeframe": "Az igénylés időtartama kötelező",
+                "requestPeriodStart": "Az igénylés kezdő dátuma kötelező",
+                "requestedData": "Legalább egy eszközt ki kell választani",
+                "requestReason": "Az igénylés indoklása kötelező",
                 "agreeTerms": "El kell fogadnia a feltételeket"
             }
         }

@@ -1,72 +1,77 @@
 {
     "sideBarOptions": {
         "home": "Home",
-        "newRequest": "New Data Retrieval Request",
-        "listRequests": "My Data Retrieval Requests"
+        "newRequest": "New Request",
+        "listRequests": "My Requests"
     },
     "wizard": {
         "next": "Next",
         "back": "Back",
         "submit": "Submit Request",
-        "submitting": "Submitting..."
+        "submitting": "Submitting...",
+        "success": {
+            "title": "Successfully Submitted!",
+            "message": "Your request has been successfully submitted. You will be notified about the decision soon.",
+            "newRequest": "Create New Request"
+        }
     },
     "requestCreate": {
-        "title": "Master Database - Data Request",
+        "title": " Sample - IT Asset Request",
         "steps": {
-            "systemInfo": "System",
-            "systemInfoDescription": "Enter the requesting system details",
+            "systemInfo": "Project",
+            "systemInfoDescription": "Enter the project details",
             "contactInfo": "Contact",
             "contactInfoDescription": "Enter the responsible contact person details",
             "requestType": "Type",
             "requestTypeDescription": "Select the request type",
-            "requestTimeframe": "Timeframe",
-            "requestTimeframeDescription": "Select the request timeframe",
+            "requestTimeframe": "Duration",
+            "requestTimeframeDescription": "Select the request duration",
             "requestPeriod": "Period",
-            "requestPeriodDescription": "Enter the request period start date",
+            "requestPeriodDescription": "Enter the request start date",
             "requestReason": "Reason",
             "requestReasonDescription": "Enter the request justification",
             "agreeTerms": "Terms",
             "agreeTermsDescription": "Accept the terms to continue",
-            "requestedData": "Data",
-            "requestedDataDescription": "Select the requested data"
+            "requestedData": "Assets",
+            "requestedDataDescription": "Select the requested assets"
         },
-        "requestedDataPlaceholder": "Requested data selection will be placed here...",
+        "requestedDataPlaceholder": "Requested asset selection will be placed here...",
         "form": {
-            "serviceName": "Requesting service name",
-            "responsibleOrg": "Organization responsible for the requesting system",
-            "responsiblePersonName": "Contact person responsible for the requesting system",
-            "responsiblePersonEmail": "Contact person email address",
+            "serviceName": "Project name",
+            "responsibleOrg": "Requesting department",
+            "responsiblePersonName": "Requester name",
+            "responsiblePersonEmail": "Requester email address",
             "requestType": "Request type",
             "requestTypeOptions": {
                 "eseti": "One-time",
-                "folyamatos": "Continuous"
+                "folyamatos": "Permanent"
             },
-            "requestTimeframe": "Request timeframe",
+            "requestTimeframe": "Request duration",
             "requestTimeframeOptions": {
-                "meghatarozott": "Specified",
-                "folyamatosan": "Ongoing"
+                "meghatarozott": "Fixed period",
+                "folyamatosan": "Indefinite"
             },
-            "requestPeriodStart": "Request period start",
+            "requestPeriodStart": "Request start date",
             "requestReason": "Request justification",
-            "agreeTerms": "By submitting this form, I acknowledge that I am obliged to supplement the related data management notice with the requested data.",
-            "dataScope": "Data Scope",
+            "agreeTerms": "By submitting this request, I agree to comply with the equipment usage policy.",
+            "dataScope": "Asset Category",
             "dataCategories": {
-                "student": "Student",
-                "employee": "Employee"
+                "hardware": "Hardware",
+                "software": "Software"
             },
             "filterByName": "Filter by name",
-            "filterByNamePlaceholder": "Search by data name...",
-            "selectedCount": "Selected: {{count}} items",
-            "activeFiltersCount": "Active filters: {{count}}",
+            "filterByNamePlaceholder": "Search by asset name...",
+            "selectedCount": "Selected: {{count}} assets",
+            "activeFiltersCount": "Active configurations: {{count}}",
             "selectCategoryFirst": "Please select at least one category from the options above.",
-            "availableData": "Available Data",
-            "selectedData": "Selected Data",
-            "allDataSelected": "All available data has been selected.",
+            "availableData": "Available Assets",
+            "selectedData": "Selected Assets",
+            "allDataSelected": "All available assets have been selected.",
             "selectedDataTable": {
-                "filterColumn": "Filter Conditions",
+                "filterColumn": "Configuration",
                 "actionsColumn": "Actions",
-                "noFilter": "No filter",
-                "editFilter": "Edit filter",
+                "noFilter": "Not configured",
+                "editFilter": "Edit configuration",
                 "remove": "Remove"
             },
             "filterSummary": {
@@ -76,10 +81,10 @@
                 "to": "To"
             },
             "dataTable": {
-                "nameColumn": "Data Name",
+                "nameColumn": "Asset Name",
                 "descriptionColumn": "Description",
                 "selectAll": "Select all",
-                "noData": "No data to display",
+                "noData": "No assets to display",
                 "filter": "Filter",
                 "filtered": "Filtered",
                 "openFilter": "Open filter",
@@ -87,7 +92,7 @@
                 "remove": "Remove"
             },
             "filterModal": {
-                "title": "Filter Conditions",
+                "title": "Configuration Settings",
                 "textContains": "Text contains",
                 "textContainsPlaceholder": "Enter search text...",
                 "textEquals": "Text equals exactly",
@@ -102,11 +107,11 @@
                 "dateFrom": "Date from",
                 "dateTo": "Date to",
                 "selectOptions": "Select values",
-                "noFiltersAvailable": "No filters available for this data type.",
-                "sampleData": "Sample Data",
+                "noFiltersAvailable": "No configuration available for this asset.",
+                "sampleData": "Available Stock",
                 "apply": "Apply",
                 "cancel": "Cancel",
-                "clearFilter": "Clear Filter"
+                "clearFilter": "Clear Configuration"
             },
             "pagination": {
                 "showing": "Showing {{start}}-{{end}} of {{total}}",
@@ -114,18 +119,18 @@
                 "next": "Next"
             },
             "required": "Required field",
-            "requiredData": "At least one data type must be selected",
+            "requiredData": "At least one asset must be selected",
             "invalidEmail": "Invalid email address",
             "mustAgree": "You must agree to the terms",
             "errors": {
-                "serviceName": "Service name is required",
-                "responsibleOrg": "Responsible organization is required",
-                "responsiblePersonName": "Responsible person name is required",
+                "serviceName": "Project name is required",
+                "responsibleOrg": "Requesting department is required",
+                "responsiblePersonName": "Requester name is required",
                 "responsiblePersonEmail": "Invalid email address",
                 "requestType": "Request type is required",
-                "requestTimeframe": "Request timeframe is required",
-                "requestPeriodStart": "Request period start date is required",
-                "requestedData": "At least one data type must be selected",
+                "requestTimeframe": "Request duration is required",
+                "requestPeriodStart": "Request start date is required",
+                "requestedData": "At least one asset must be selected",
                 "requestReason": "Request reason is required",
                 "agreeTerms": "You must agree to the terms"
             }

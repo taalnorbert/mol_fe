@@ -9,7 +9,7 @@ export interface DataItem {
     id: string;
     name: string;
     description: string;
-    category: "student" | "employee";
+    category: "hardware" | "software";
     filterConfig: FilterConfig;
     sampleData: SampleRecord[];
 }
@@ -21,7 +21,7 @@ export interface SampleRecord {
 }
 
 export interface DataCategory {
-    id: "student" | "employee";
+    id: "hardware" | "software";
     labelKey: string;
 }
 
@@ -40,528 +40,596 @@ export interface DataFilter {
 }
 
 export const dataCategories: DataCategory[] = [
-    { id: "student", labelKey: "requestCreate.form.dataCategories.student" },
-    { id: "employee", labelKey: "requestCreate.form.dataCategories.employee" },
+    { id: "hardware", labelKey: "requestCreate.form.dataCategories.hardware" },
+    { id: "software", labelKey: "requestCreate.form.dataCategories.software" },
 ];
 
-const studentData: DataItem[] = [
+const hardwareData: DataItem[] = [
     { 
-        id: "s1", 
-        name: "Neptun kód", 
-        description: "A hallgató Neptun rendszerbeli azonosítója", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s1-1", value: "ABC123", personName: "Kiss Péter" },
-            { id: "s1-2", value: "DEF456", personName: "Nagy Anna" },
-            { id: "s1-3", value: "GHI789", personName: "Szabó János" },
-            { id: "s1-4", value: "JKL012", personName: "Tóth Éva" },
-            { id: "s1-5", value: "MNO345", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s2", 
-        name: "Teljes név", 
-        description: "A hallgató hivatalos teljes neve", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s2-1", value: "Kiss Péter", personName: "Kiss Péter" },
-            { id: "s2-2", value: "Nagy Anna", personName: "Nagy Anna" },
-            { id: "s2-3", value: "Szabó János", personName: "Szabó János" },
-            { id: "s2-4", value: "Tóth Éva", personName: "Tóth Éva" },
-            { id: "s2-5", value: "Kovács Márk", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s3", 
-        name: "Születési év", 
-        description: "A hallgató születési éve", 
-        category: "student",
-        filterConfig: { type: "number" },
-        sampleData: [
-            { id: "s3-1", value: 2000, personName: "Kiss Péter" },
-            { id: "s3-2", value: 2001, personName: "Nagy Anna" },
-            { id: "s3-3", value: 2002, personName: "Szabó János" },
-            { id: "s3-4", value: 2003, personName: "Tóth Éva" },
-            { id: "s3-5", value: 2004, personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s4", 
-        name: "Születési hely", 
-        description: "A hallgató születési helye", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s4-1", value: "Budapest", personName: "Kiss Péter" },
-            { id: "s4-2", value: "Debrecen", personName: "Nagy Anna" },
-            { id: "s4-3", value: "Szeged", personName: "Szabó János" },
-            { id: "s4-4", value: "Pécs", personName: "Tóth Éva" },
-            { id: "s4-5", value: "Győr", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s5", 
-        name: "Anyja neve", 
-        description: "A hallgató anyjának leánykori neve", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s5-1", value: "Horváth Mária", personName: "Kiss Péter" },
-            { id: "s5-2", value: "Fekete Katalin", personName: "Nagy Anna" },
-            { id: "s5-3", value: "Molnár Ágnes", personName: "Szabó János" },
-            { id: "s5-4", value: "Varga Ilona", personName: "Tóth Éva" },
-            { id: "s5-5", value: "Balogh Eszter", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s6", 
-        name: "Lakcím", 
-        description: "A hallgató állandó lakcíme", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s6-1", value: "1111 Budapest, Fő utca 1.", personName: "Kiss Péter" },
-            { id: "s6-2", value: "4024 Debrecen, Piac utca 5.", personName: "Nagy Anna" },
-            { id: "s6-3", value: "6720 Szeged, Kárász utca 10.", personName: "Szabó János" },
-            { id: "s6-4", value: "7621 Pécs, Király utca 3.", personName: "Tóth Éva" },
-            { id: "s6-5", value: "9021 Győr, Baross Gábor út 8.", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s7", 
-        name: "E-mail cím", 
-        description: "A hallgató elsődleges e-mail címe", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s7-1", value: "kiss.peter@student.uni.hu", personName: "Kiss Péter" },
-            { id: "s7-2", value: "nagy.anna@student.uni.hu", personName: "Nagy Anna" },
-            { id: "s7-3", value: "szabo.janos@student.uni.hu", personName: "Szabó János" },
-            { id: "s7-4", value: "toth.eva@student.uni.hu", personName: "Tóth Éva" },
-            { id: "s7-5", value: "kovacs.mark@student.uni.hu", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s8", 
-        name: "Telefonszám", 
-        description: "A hallgató telefonszáma", 
-        category: "student",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "s8-1", value: "+36 30 123 4567", personName: "Kiss Péter" },
-            { id: "s8-2", value: "+36 20 234 5678", personName: "Nagy Anna" },
-            { id: "s8-3", value: "+36 70 345 6789", personName: "Szabó János" },
-            { id: "s8-4", value: "+36 30 456 7890", personName: "Tóth Éva" },
-            { id: "s8-5", value: "+36 20 567 8901", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s9", 
-        name: "Szak megnevezése", 
-        description: "A hallgató aktív szakjának megnevezése", 
-        category: "student",
+        id: "h1", 
+        name: "Laptop", 
+        description: "Hordozható számítógép munkavégzéshez", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Mérnökinformatikus", "Gazdaságinformatikus", "Programtervező informatikus", "Villamosmérnök", "Gépészmérnök"]
+            options: ["Dell Latitude", "HP EliteBook", "Lenovo ThinkPad", "Apple MacBook Pro", "ASUS ZenBook"]
         },
         sampleData: [
-            { id: "s9-1", value: "Mérnökinformatikus", personName: "Kiss Péter" },
-            { id: "s9-2", value: "Gazdaságinformatikus", personName: "Nagy Anna" },
-            { id: "s9-3", value: "Programtervező informatikus", personName: "Szabó János" },
-            { id: "s9-4", value: "Villamosmérnök", personName: "Tóth Éva" },
-            { id: "s9-5", value: "Gépészmérnök", personName: "Kovács Márk" },
+            { id: "h1-1", value: "Dell Latitude 5540", personName: "Raktár A" },
+            { id: "h1-2", value: "HP EliteBook 850", personName: "Raktár A" },
+            { id: "h1-3", value: "Lenovo ThinkPad T14", personName: "Raktár B" },
+            { id: "h1-4", value: "Apple MacBook Pro 14", personName: "Raktár C" },
+            { id: "h1-5", value: "ASUS ZenBook 14", personName: "Raktár B" },
         ]
     },
     { 
-        id: "s10", 
-        name: "Képzési szint", 
-        description: "A képzés szintje (BSc, MSc, PhD, stb.)", 
-        category: "student",
+        id: "h2", 
+        name: "Monitor", 
+        description: "Külső megjelenítő eszköz", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["BSc", "MSc", "PhD", "OKJ", "Felsőoktatási szakképzés"]
+            options: ["Dell UltraSharp", "LG UltraWide", "Samsung Curved", "BenQ Designer", "ASUS ProArt"]
         },
         sampleData: [
-            { id: "s10-1", value: "BSc", personName: "Kiss Péter" },
-            { id: "s10-2", value: "MSc", personName: "Nagy Anna" },
-            { id: "s10-3", value: "BSc", personName: "Szabó János" },
-            { id: "s10-4", value: "PhD", personName: "Tóth Éva" },
-            { id: "s10-5", value: "MSc", personName: "Kovács Márk" },
+            { id: "h2-1", value: "Dell UltraSharp 27\"", personName: "Raktár A" },
+            { id: "h2-2", value: "LG UltraWide 34\"", personName: "Raktár A" },
+            { id: "h2-3", value: "Samsung Curved 32\"", personName: "Raktár B" },
+            { id: "h2-4", value: "BenQ Designer 27\"", personName: "Raktár C" },
+            { id: "h2-5", value: "ASUS ProArt 32\"", personName: "Raktár B" },
         ]
     },
     { 
-        id: "s11", 
-        name: "Tagozat", 
-        description: "A hallgató tagozata (nappali, levelező, stb.)", 
-        category: "student",
+        id: "h3", 
+        name: "Billentyűzet", 
+        description: "Vezetékes vagy vezeték nélküli billentyűzet", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Nappali", "Levelező", "Esti", "Távoktatás"]
+            options: ["Logitech MX Keys", "Microsoft Ergonomic", "Apple Magic Keyboard", "Razer Pro", "Keychron K2"]
         },
         sampleData: [
-            { id: "s11-1", value: "Nappali", personName: "Kiss Péter" },
-            { id: "s11-2", value: "Nappali", personName: "Nagy Anna" },
-            { id: "s11-3", value: "Levelező", personName: "Szabó János" },
-            { id: "s11-4", value: "Nappali", personName: "Tóth Éva" },
-            { id: "s11-5", value: "Esti", personName: "Kovács Márk" },
+            { id: "h3-1", value: "Logitech MX Keys", personName: "Raktár A" },
+            { id: "h3-2", value: "Microsoft Ergonomic", personName: "Raktár A" },
+            { id: "h3-3", value: "Apple Magic Keyboard", personName: "Raktár C" },
+            { id: "h3-4", value: "Razer Pro Type", personName: "Raktár B" },
+            { id: "h3-5", value: "Keychron K2", personName: "Raktár B" },
         ]
     },
     { 
-        id: "s12", 
-        name: "Aktív félév", 
-        description: "A hallgató aktuális aktív féléve", 
-        category: "student",
-        filterConfig: { type: "number" },
-        sampleData: [
-            { id: "s12-1", value: 3, personName: "Kiss Péter" },
-            { id: "s12-2", value: 5, personName: "Nagy Anna" },
-            { id: "s12-3", value: 2, personName: "Szabó János" },
-            { id: "s12-4", value: 7, personName: "Tóth Éva" },
-            { id: "s12-5", value: 4, personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s13", 
-        name: "Hallgatói státusz", 
-        description: "A hallgató jelenlegi státusza (aktív, passzív, stb.)", 
-        category: "student",
+        id: "h4", 
+        name: "Egér", 
+        description: "Vezetékes vagy vezeték nélküli egér", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Aktív", "Passzív", "Végzett", "Törölve"]
+            options: ["Logitech MX Master", "Microsoft Arc", "Apple Magic Mouse", "Razer DeathAdder", "Logitech Lift"]
         },
         sampleData: [
-            { id: "s13-1", value: "Aktív", personName: "Kiss Péter" },
-            { id: "s13-2", value: "Aktív", personName: "Nagy Anna" },
-            { id: "s13-3", value: "Passzív", personName: "Szabó János" },
-            { id: "s13-4", value: "Aktív", personName: "Tóth Éva" },
-            { id: "s13-5", value: "Végzett", personName: "Kovács Márk" },
+            { id: "h4-1", value: "Logitech MX Master 3S", personName: "Raktár A" },
+            { id: "h4-2", value: "Microsoft Arc Mouse", personName: "Raktár A" },
+            { id: "h4-3", value: "Apple Magic Mouse", personName: "Raktár C" },
+            { id: "h4-4", value: "Razer DeathAdder V3", personName: "Raktár B" },
+            { id: "h4-5", value: "Logitech Lift", personName: "Raktár B" },
         ]
     },
     { 
-        id: "s14", 
-        name: "Beiratkozás dátuma", 
-        description: "A hallgató beiratkozásának dátuma", 
-        category: "student",
-        filterConfig: { type: "date" },
-        sampleData: [
-            { id: "s14-1", value: "2022-09-01", personName: "Kiss Péter" },
-            { id: "s14-2", value: "2021-09-01", personName: "Nagy Anna" },
-            { id: "s14-3", value: "2023-02-01", personName: "Szabó János" },
-            { id: "s14-4", value: "2020-09-01", personName: "Tóth Éva" },
-            { id: "s14-5", value: "2022-02-01", personName: "Kovács Márk" },
-        ]
-    },
-    { 
-        id: "s15", 
-        name: "Kar megnevezése", 
-        description: "A hallgató karjának megnevezése", 
-        category: "student",
+        id: "h5", 
+        name: "Headset", 
+        description: "Fejhallgató mikrofonnal kommunikációhoz", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Informatikai Kar", "Műszaki Kar", "Gazdaságtudományi Kar", "Természettudományi Kar", "Bölcsészettudományi Kar"]
+            options: ["Jabra Evolve2", "Poly Voyager", "Logitech Zone", "Sony WH-1000XM5", "Bose 700"]
         },
         sampleData: [
-            { id: "s15-1", value: "Informatikai Kar", personName: "Kiss Péter" },
-            { id: "s15-2", value: "Gazdaságtudományi Kar", personName: "Nagy Anna" },
-            { id: "s15-3", value: "Informatikai Kar", personName: "Szabó János" },
-            { id: "s15-4", value: "Műszaki Kar", personName: "Tóth Éva" },
-            { id: "s15-5", value: "Műszaki Kar", personName: "Kovács Márk" },
+            { id: "h5-1", value: "Jabra Evolve2 85", personName: "Raktár A" },
+            { id: "h5-2", value: "Poly Voyager Focus 2", personName: "Raktár A" },
+            { id: "h5-3", value: "Logitech Zone Wireless", personName: "Raktár B" },
+            { id: "h5-4", value: "Sony WH-1000XM5", personName: "Raktár C" },
+            { id: "h5-5", value: "Bose 700 UC", personName: "Raktár B" },
         ]
     },
     { 
-        id: "s16", 
-        name: "Kreditszám", 
-        description: "A hallgató összegyűjtött kreditjeinek száma", 
-        category: "student",
-        filterConfig: { type: "number" },
-        sampleData: [
-            { id: "s16-1", value: 90, personName: "Kiss Péter" },
-            { id: "s16-2", value: 150, personName: "Nagy Anna" },
-            { id: "s16-3", value: 60, personName: "Szabó János" },
-            { id: "s16-4", value: 210, personName: "Tóth Éva" },
-            { id: "s16-5", value: 120, personName: "Kovács Márk" },
-        ]
-    },
-];
-
-const employeeData: DataItem[] = [
-    { 
-        id: "e1", 
-        name: "Teljes név", 
-        description: "Az alkalmazott hivatalos teljes neve", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e1-1", value: "Dr. Horváth László", personName: "Dr. Horváth László" },
-            { id: "e1-2", value: "Németh Katalin", personName: "Németh Katalin" },
-            { id: "e1-3", value: "Dr. Farkas István", personName: "Dr. Farkas István" },
-            { id: "e1-4", value: "Papp Zsuzsanna", personName: "Papp Zsuzsanna" },
-            { id: "e1-5", value: "Dr. Molnár Gábor", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e2", 
-        name: "Születési év", 
-        description: "Az alkalmazott születési éve", 
-        category: "employee",
-        filterConfig: { type: "number" },
-        sampleData: [
-            { id: "e2-1", value: 1975, personName: "Dr. Horváth László" },
-            { id: "e2-2", value: 1982, personName: "Németh Katalin" },
-            { id: "e2-3", value: 1968, personName: "Dr. Farkas István" },
-            { id: "e2-4", value: 1990, personName: "Papp Zsuzsanna" },
-            { id: "e2-5", value: 1978, personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e3", 
-        name: "Születési hely", 
-        description: "Az alkalmazott születési helye", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e3-1", value: "Budapest", personName: "Dr. Horváth László" },
-            { id: "e3-2", value: "Miskolc", personName: "Németh Katalin" },
-            { id: "e3-3", value: "Szeged", personName: "Dr. Farkas István" },
-            { id: "e3-4", value: "Debrecen", personName: "Papp Zsuzsanna" },
-            { id: "e3-5", value: "Pécs", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e4", 
-        name: "Anyja neve", 
-        description: "Az alkalmazott anyjának leánykori neve", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e4-1", value: "Kiss Mária", personName: "Dr. Horváth László" },
-            { id: "e4-2", value: "Tóth Erzsébet", personName: "Németh Katalin" },
-            { id: "e4-3", value: "Szabó Ilona", personName: "Dr. Farkas István" },
-            { id: "e4-4", value: "Nagy Judit", personName: "Papp Zsuzsanna" },
-            { id: "e4-5", value: "Varga Anna", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e5", 
-        name: "Lakcím", 
-        description: "Az alkalmazott állandó lakcíme", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e5-1", value: "1052 Budapest, Váci utca 12.", personName: "Dr. Horváth László" },
-            { id: "e5-2", value: "3530 Miskolc, Széchenyi utca 8.", personName: "Németh Katalin" },
-            { id: "e5-3", value: "6722 Szeged, Tisza Lajos krt. 45.", personName: "Dr. Farkas István" },
-            { id: "e5-4", value: "4026 Debrecen, Bethlen utca 3.", personName: "Papp Zsuzsanna" },
-            { id: "e5-5", value: "7622 Pécs, Rákóczi út 15.", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e6", 
-        name: "E-mail cím", 
-        description: "Az alkalmazott munkahelyi e-mail címe", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e6-1", value: "horvath.laszlo@uni.hu", personName: "Dr. Horváth László" },
-            { id: "e6-2", value: "nemeth.katalin@uni.hu", personName: "Németh Katalin" },
-            { id: "e6-3", value: "farkas.istvan@uni.hu", personName: "Dr. Farkas István" },
-            { id: "e6-4", value: "papp.zsuzsanna@uni.hu", personName: "Papp Zsuzsanna" },
-            { id: "e6-5", value: "molnar.gabor@uni.hu", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e7", 
-        name: "Telefonszám", 
-        description: "Az alkalmazott munkahelyi telefonszáma", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e7-1", value: "+36 1 123 4567", personName: "Dr. Horváth László" },
-            { id: "e7-2", value: "+36 1 234 5678", personName: "Németh Katalin" },
-            { id: "e7-3", value: "+36 1 345 6789", personName: "Dr. Farkas István" },
-            { id: "e7-4", value: "+36 1 456 7890", personName: "Papp Zsuzsanna" },
-            { id: "e7-5", value: "+36 1 567 8901", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e8", 
-        name: "Beosztás", 
-        description: "Az alkalmazott munkaköri beosztása", 
-        category: "employee",
+        id: "h6", 
+        name: "Webkamera", 
+        description: "Külső kamera videohívásokhoz", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Egyetemi tanár", "Docens", "Adjunktus", "Tanársegéd", "Adminisztrátor", "Gazdasági munkatárs"]
+            options: ["Logitech Brio", "Logitech C920", "Microsoft LifeCam", "Razer Kiyo", "Elgato Facecam"]
         },
         sampleData: [
-            { id: "e8-1", value: "Egyetemi tanár", personName: "Dr. Horváth László" },
-            { id: "e8-2", value: "Adminisztrátor", personName: "Németh Katalin" },
-            { id: "e8-3", value: "Docens", personName: "Dr. Farkas István" },
-            { id: "e8-4", value: "Gazdasági munkatárs", personName: "Papp Zsuzsanna" },
-            { id: "e8-5", value: "Adjunktus", personName: "Dr. Molnár Gábor" },
+            { id: "h6-1", value: "Logitech Brio 4K", personName: "Raktár A" },
+            { id: "h6-2", value: "Logitech C920 HD", personName: "Raktár A" },
+            { id: "h6-3", value: "Microsoft LifeCam Studio", personName: "Raktár B" },
+            { id: "h6-4", value: "Razer Kiyo Pro", personName: "Raktár C" },
+            { id: "h6-5", value: "Elgato Facecam", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e9", 
-        name: "Szervezeti egység", 
-        description: "Az alkalmazott szervezeti egysége", 
-        category: "employee",
+        id: "h7", 
+        name: "Dokkoló állomás", 
+        description: "USB-C vagy Thunderbolt dokkoló", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Informatikai Tanszék", "Gazdasági Hivatal", "Rektori Hivatal", "Műszaki Tanszék", "HR Osztály"]
+            options: ["Dell WD19", "Lenovo ThinkPad USB-C", "HP Thunderbolt G4", "CalDigit TS4", "Anker PowerExpand"]
         },
         sampleData: [
-            { id: "e9-1", value: "Informatikai Tanszék", personName: "Dr. Horváth László" },
-            { id: "e9-2", value: "Rektori Hivatal", personName: "Németh Katalin" },
-            { id: "e9-3", value: "Informatikai Tanszék", personName: "Dr. Farkas István" },
-            { id: "e9-4", value: "Gazdasági Hivatal", personName: "Papp Zsuzsanna" },
-            { id: "e9-5", value: "Műszaki Tanszék", personName: "Dr. Molnár Gábor" },
+            { id: "h7-1", value: "Dell WD19TBS", personName: "Raktár A" },
+            { id: "h7-2", value: "Lenovo ThinkPad USB-C Dock", personName: "Raktár A" },
+            { id: "h7-3", value: "HP Thunderbolt G4 Dock", personName: "Raktár B" },
+            { id: "h7-4", value: "CalDigit TS4", personName: "Raktár C" },
+            { id: "h7-5", value: "Anker PowerExpand Elite", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e10", 
-        name: "Munkaviszony kezdete", 
-        description: "Az alkalmazott munkaviszonyának kezdő dátuma", 
-        category: "employee",
-        filterConfig: { type: "date" },
-        sampleData: [
-            { id: "e10-1", value: "2005-09-01", personName: "Dr. Horváth László" },
-            { id: "e10-2", value: "2015-03-15", personName: "Németh Katalin" },
-            { id: "e10-3", value: "2000-09-01", personName: "Dr. Farkas István" },
-            { id: "e10-4", value: "2020-01-10", personName: "Papp Zsuzsanna" },
-            { id: "e10-5", value: "2010-09-01", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e11", 
-        name: "Munkaviszony típusa", 
-        description: "A munkaviszony típusa (határozatlan, határozott, stb.)", 
-        category: "employee",
+        id: "h8", 
+        name: "Külső merevlemez", 
+        description: "Hordozható adattároló eszköz", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Határozatlan idejű", "Határozott idejű", "Megbízási", "Óraadó"]
+            options: ["Samsung T7", "SanDisk Extreme", "WD My Passport", "Seagate Backup Plus", "LaCie Rugged"]
         },
         sampleData: [
-            { id: "e11-1", value: "Határozatlan idejű", personName: "Dr. Horváth László" },
-            { id: "e11-2", value: "Határozatlan idejű", personName: "Németh Katalin" },
-            { id: "e11-3", value: "Határozatlan idejű", personName: "Dr. Farkas István" },
-            { id: "e11-4", value: "Határozott idejű", personName: "Papp Zsuzsanna" },
-            { id: "e11-5", value: "Határozatlan idejű", personName: "Dr. Molnár Gábor" },
+            { id: "h8-1", value: "Samsung T7 1TB", personName: "Raktár A" },
+            { id: "h8-2", value: "SanDisk Extreme 2TB", personName: "Raktár A" },
+            { id: "h8-3", value: "WD My Passport 4TB", personName: "Raktár B" },
+            { id: "h8-4", value: "Seagate Backup Plus 5TB", personName: "Raktár C" },
+            { id: "h8-5", value: "LaCie Rugged 2TB", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e12", 
-        name: "Munkaidő", 
-        description: "A munkaidő típusa (teljes, részmunkaidő)", 
-        category: "employee",
+        id: "h9", 
+        name: "Nyomtató", 
+        description: "Irodai nyomtató", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Teljes munkaidő", "Részmunkaidő", "4 órás", "6 órás"]
+            options: ["HP LaserJet", "Canon imageRUNNER", "Brother MFC", "Epson WorkForce", "Xerox VersaLink"]
         },
         sampleData: [
-            { id: "e12-1", value: "Teljes munkaidő", personName: "Dr. Horváth László" },
-            { id: "e12-2", value: "Teljes munkaidő", personName: "Németh Katalin" },
-            { id: "e12-3", value: "Teljes munkaidő", personName: "Dr. Farkas István" },
-            { id: "e12-4", value: "Részmunkaidő", personName: "Papp Zsuzsanna" },
-            { id: "e12-5", value: "Teljes munkaidő", personName: "Dr. Molnár Gábor" },
+            { id: "h9-1", value: "HP LaserJet Pro M404", personName: "Raktár A" },
+            { id: "h9-2", value: "Canon imageRUNNER C3226i", personName: "Raktár A" },
+            { id: "h9-3", value: "Brother MFC-L8900CDW", personName: "Raktár B" },
+            { id: "h9-4", value: "Epson WorkForce Pro WF-4830", personName: "Raktár C" },
+            { id: "h9-5", value: "Xerox VersaLink C405", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e13", 
-        name: "Felettes neve", 
-        description: "Az alkalmazott közvetlen felettesének neve", 
-        category: "employee",
-        filterConfig: { type: "text" },
-        sampleData: [
-            { id: "e13-1", value: "Dr. Varga Béla", personName: "Dr. Horváth László" },
-            { id: "e13-2", value: "Dr. Kiss Andrea", personName: "Németh Katalin" },
-            { id: "e13-3", value: "Dr. Varga Béla", personName: "Dr. Farkas István" },
-            { id: "e13-4", value: "Fekete Tibor", personName: "Papp Zsuzsanna" },
-            { id: "e13-5", value: "Dr. Varga Béla", personName: "Dr. Molnár Gábor" },
-        ]
-    },
-    { 
-        id: "e14", 
-        name: "Tudományos fokozat", 
-        description: "Az alkalmazott tudományos fokozata", 
-        category: "employee",
+        id: "h10", 
+        name: "Tablet", 
+        description: "Hordozható táblagép", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["PhD", "CSc", "DSc", "Habilitált", "Nincs"]
+            options: ["Apple iPad Pro", "Samsung Galaxy Tab", "Microsoft Surface Pro", "Lenovo Tab P12", "Huawei MatePad"]
         },
         sampleData: [
-            { id: "e14-1", value: "DSc", personName: "Dr. Horváth László" },
-            { id: "e14-2", value: "Nincs", personName: "Németh Katalin" },
-            { id: "e14-3", value: "PhD", personName: "Dr. Farkas István" },
-            { id: "e14-4", value: "Nincs", personName: "Papp Zsuzsanna" },
-            { id: "e14-5", value: "PhD", personName: "Dr. Molnár Gábor" },
+            { id: "h10-1", value: "Apple iPad Pro 12.9\"", personName: "Raktár C" },
+            { id: "h10-2", value: "Samsung Galaxy Tab S9+", personName: "Raktár A" },
+            { id: "h10-3", value: "Microsoft Surface Pro 9", personName: "Raktár B" },
+            { id: "h10-4", value: "Lenovo Tab P12 Pro", personName: "Raktár B" },
+            { id: "h10-5", value: "Huawei MatePad Pro", personName: "Raktár A" },
         ]
     },
     { 
-        id: "e15", 
-        name: "Nyelvismeret", 
-        description: "Az alkalmazott nyelvtudása", 
-        category: "employee",
+        id: "h11", 
+        name: "Asztali számítógép", 
+        description: "Állandó telepítésű munkaállomás", 
+        category: "hardware",
         filterConfig: { 
             type: "select",
-            options: ["Angol", "Német", "Francia", "Orosz", "Spanyol", "Olasz"]
+            options: ["Dell OptiPlex", "HP ProDesk", "Lenovo ThinkCentre", "Apple iMac", "ASUS ExpertCenter"]
         },
         sampleData: [
-            { id: "e15-1", value: "Angol", personName: "Dr. Horváth László" },
-            { id: "e15-2", value: "Német", personName: "Németh Katalin" },
-            { id: "e15-3", value: "Angol", personName: "Dr. Farkas István" },
-            { id: "e15-4", value: "Angol", personName: "Papp Zsuzsanna" },
-            { id: "e15-5", value: "Francia", personName: "Dr. Molnár Gábor" },
+            { id: "h11-1", value: "Dell OptiPlex 7010", personName: "Raktár A" },
+            { id: "h11-2", value: "HP ProDesk 400 G9", personName: "Raktár A" },
+            { id: "h11-3", value: "Lenovo ThinkCentre M90q", personName: "Raktár B" },
+            { id: "h11-4", value: "Apple iMac 24\"", personName: "Raktár C" },
+            { id: "h11-5", value: "ASUS ExpertCenter D7", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e16", 
-        name: "TAJ szám", 
-        description: "Az alkalmazott társadalombiztosítási azonosító jele", 
-        category: "employee",
-        filterConfig: { type: "text" },
+        id: "h12", 
+        name: "Projektor", 
+        description: "Prezentációs vetítő", 
+        category: "hardware",
+        filterConfig: { 
+            type: "select",
+            options: ["Epson EB", "BenQ MH", "Optoma HD", "ViewSonic PX", "Sony VPL"]
+        },
         sampleData: [
-            { id: "e16-1", value: "123 456 789", personName: "Dr. Horváth László" },
-            { id: "e16-2", value: "234 567 890", personName: "Németh Katalin" },
-            { id: "e16-3", value: "345 678 901", personName: "Dr. Farkas István" },
-            { id: "e16-4", value: "456 789 012", personName: "Papp Zsuzsanna" },
-            { id: "e16-5", value: "567 890 123", personName: "Dr. Molnár Gábor" },
+            { id: "h12-1", value: "Epson EB-2265U", personName: "Raktár A" },
+            { id: "h12-2", value: "BenQ MH760", personName: "Raktár A" },
+            { id: "h12-3", value: "Optoma HD39HDRx", personName: "Raktár B" },
+            { id: "h12-4", value: "ViewSonic PX701-4K", personName: "Raktár C" },
+            { id: "h12-5", value: "Sony VPL-PHZ60", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e17", 
-        name: "Adóazonosító", 
-        description: "Az alkalmazott adóazonosító jele", 
-        category: "employee",
-        filterConfig: { type: "text" },
+        id: "h13", 
+        name: "Szünetmentes tápegység", 
+        description: "UPS áramellátás biztosítására", 
+        category: "hardware",
+        filterConfig: { 
+            type: "select",
+            options: ["APC Back-UPS", "CyberPower", "Eaton 5S", "Legrand Keor", "Vertiv Edge"]
+        },
         sampleData: [
-            { id: "e17-1", value: "8123456789", personName: "Dr. Horváth László" },
-            { id: "e17-2", value: "8234567890", personName: "Németh Katalin" },
-            { id: "e17-3", value: "8345678901", personName: "Dr. Farkas István" },
-            { id: "e17-4", value: "8456789012", personName: "Papp Zsuzsanna" },
-            { id: "e17-5", value: "8567890123", personName: "Dr. Molnár Gábor" },
+            { id: "h13-1", value: "APC Back-UPS Pro 1500", personName: "Raktár A" },
+            { id: "h13-2", value: "CyberPower CP1500PFCLCD", personName: "Raktár A" },
+            { id: "h13-3", value: "Eaton 5S 1500i", personName: "Raktár B" },
+            { id: "h13-4", value: "Legrand Keor SP 1500", personName: "Raktár C" },
+            { id: "h13-5", value: "Vertiv Edge 1500", personName: "Raktár B" },
         ]
     },
     { 
-        id: "e18", 
-        name: "Munkába lépés éve", 
-        description: "Az alkalmazott munkába lépésének éve", 
-        category: "employee",
-        filterConfig: { type: "number" },
+        id: "h14", 
+        name: "Hálózati switch", 
+        description: "Ethernet hálózati kapcsoló", 
+        category: "hardware",
+        filterConfig: { 
+            type: "select",
+            options: ["Cisco Catalyst", "HP Aruba", "Netgear ProSAFE", "TP-Link JetStream", "Ubiquiti UniFi"]
+        },
         sampleData: [
-            { id: "e18-1", value: 2005, personName: "Dr. Horváth László" },
-            { id: "e18-2", value: 2015, personName: "Németh Katalin" },
-            { id: "e18-3", value: 2000, personName: "Dr. Farkas István" },
-            { id: "e18-4", value: 2020, personName: "Papp Zsuzsanna" },
-            { id: "e18-5", value: 2010, personName: "Dr. Molnár Gábor" },
+            { id: "h14-1", value: "Cisco Catalyst 9200", personName: "Raktár A" },
+            { id: "h14-2", value: "HP Aruba 2930F", personName: "Raktár A" },
+            { id: "h14-3", value: "Netgear ProSAFE XS708E", personName: "Raktár B" },
+            { id: "h14-4", value: "TP-Link JetStream TL-SG3428", personName: "Raktár C" },
+            { id: "h14-5", value: "Ubiquiti UniFi Pro 24", personName: "Raktár B" },
+        ]
+    },
+    { 
+        id: "h15", 
+        name: "Router", 
+        description: "Hálózati útválasztó", 
+        category: "hardware",
+        filterConfig: { 
+            type: "select",
+            options: ["Cisco ISR", "MikroTik", "Ubiquiti EdgeRouter", "Juniper SRX", "Fortinet FortiGate"]
+        },
+        sampleData: [
+            { id: "h15-1", value: "Cisco ISR 4331", personName: "Raktár A" },
+            { id: "h15-2", value: "MikroTik CCR2004", personName: "Raktár A" },
+            { id: "h15-3", value: "Ubiquiti EdgeRouter 4", personName: "Raktár B" },
+            { id: "h15-4", value: "Juniper SRX320", personName: "Raktár C" },
+            { id: "h15-5", value: "Fortinet FortiGate 60F", personName: "Raktár B" },
+        ]
+    },
+    { 
+        id: "h16", 
+        name: "Telefon (IP)", 
+        description: "VoIP asztali telefon", 
+        category: "hardware",
+        filterConfig: { 
+            type: "select",
+            options: ["Cisco IP Phone", "Yealink T5", "Poly VVX", "Grandstream GRP", "Fanvil X"]
+        },
+        sampleData: [
+            { id: "h16-1", value: "Cisco IP Phone 8845", personName: "Raktár A" },
+            { id: "h16-2", value: "Yealink T54W", personName: "Raktár A" },
+            { id: "h16-3", value: "Poly VVX 450", personName: "Raktár B" },
+            { id: "h16-4", value: "Grandstream GRP2615", personName: "Raktár C" },
+            { id: "h16-5", value: "Fanvil X6U", personName: "Raktár B" },
         ]
     },
 ];
+const softwareData: DataItem[] = [
+    { 
+        id: "sw1", 
+        name: "Microsoft 365", 
+        description: "Irodai alkalmazáscsomag (Word, Excel, PowerPoint, Outlook)", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Business Basic", "Business Standard", "Business Premium", "E3", "E5"]
+        },
+        sampleData: [
+            { id: "sw1-1", value: "Business Standard", personName: "10 db elérhető" },
+            { id: "sw1-2", value: "E3", personName: "25 db elérhető" },
+            { id: "sw1-3", value: "E5", personName: "5 db elérhető" },
+            { id: "sw1-4", value: "Business Basic", personName: "50 db elérhető" },
+            { id: "sw1-5", value: "Business Premium", personName: "15 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw2", 
+        name: "Adobe Creative Cloud", 
+        description: "Kreatív szoftvercsomag (Photoshop, Illustrator, InDesign)", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Fotózás csomag", "Egyedi alkalmazás", "Teljes csomag", "Team csomag"]
+        },
+        sampleData: [
+            { id: "sw2-1", value: "Teljes csomag", personName: "8 db elérhető" },
+            { id: "sw2-2", value: "Fotózás csomag", personName: "20 db elérhető" },
+            { id: "sw2-3", value: "Egyedi alkalmazás", personName: "30 db elérhető" },
+            { id: "sw2-4", value: "Team csomag", personName: "5 db elérhető" },
+            { id: "sw2-5", value: "Teljes csomag", personName: "12 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw3", 
+        name: "Fejlesztői eszközök", 
+        description: "IDE és fejlesztői környezetek", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Visual Studio Professional", "Visual Studio Enterprise", "JetBrains All Products", "Rider", "WebStorm"]
+        },
+        sampleData: [
+            { id: "sw3-1", value: "Visual Studio Enterprise", personName: "15 db elérhető" },
+            { id: "sw3-2", value: "JetBrains All Products", personName: "10 db elérhető" },
+            { id: "sw3-3", value: "Rider", personName: "8 db elérhető" },
+            { id: "sw3-4", value: "WebStorm", personName: "12 db elérhető" },
+            { id: "sw3-5", value: "Visual Studio Professional", personName: "20 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw4", 
+        name: "Vírusvédelem", 
+        description: "Vállalati vírusirtó és biztonsági szoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Microsoft Defender", "ESET Endpoint", "Symantec Endpoint", "CrowdStrike Falcon", "Bitdefender GravityZone"]
+        },
+        sampleData: [
+            { id: "sw4-1", value: "Microsoft Defender for Endpoint", personName: "100 db elérhető" },
+            { id: "sw4-2", value: "ESET Endpoint Security", personName: "50 db elérhető" },
+            { id: "sw4-3", value: "CrowdStrike Falcon", personName: "30 db elérhető" },
+            { id: "sw4-4", value: "Bitdefender GravityZone", personName: "40 db elérhető" },
+            { id: "sw4-5", value: "Symantec Endpoint Protection", personName: "25 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw5", 
+        name: "Projektmenedzsment", 
+        description: "Projekt és feladatkezelő szoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Jira", "Asana", "Monday.com", "Microsoft Project", "Trello Premium"]
+        },
+        sampleData: [
+            { id: "sw5-1", value: "Jira Software", personName: "Korlátlan licenc" },
+            { id: "sw5-2", value: "Microsoft Project Plan 3", personName: "15 db elérhető" },
+            { id: "sw5-3", value: "Asana Business", personName: "20 db elérhető" },
+            { id: "sw5-4", value: "Monday.com", personName: "25 db elérhető" },
+            { id: "sw5-5", value: "Trello Premium", personName: "50 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw6", 
+        name: "Videokonferencia", 
+        description: "Videohívás és meetingszoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Microsoft Teams", "Zoom Business", "Webex", "Google Meet Enterprise", "GoToMeeting"]
+        },
+        sampleData: [
+            { id: "sw6-1", value: "Microsoft Teams Premium", personName: "100 db elérhető" },
+            { id: "sw6-2", value: "Zoom Business", personName: "30 db elérhető" },
+            { id: "sw6-3", value: "Webex Enterprise", personName: "25 db elérhető" },
+            { id: "sw6-4", value: "Google Meet Enterprise", personName: "20 db elérhető" },
+            { id: "sw6-5", value: "GoToMeeting Professional", personName: "15 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw7", 
+        name: "CAD szoftver", 
+        description: "Tervezői és mérnöki szoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["AutoCAD", "SolidWorks", "Fusion 360", "Revit", "SketchUp Pro"]
+        },
+        sampleData: [
+            { id: "sw7-1", value: "AutoCAD 2025", personName: "10 db elérhető" },
+            { id: "sw7-2", value: "SolidWorks Professional", personName: "8 db elérhető" },
+            { id: "sw7-3", value: "Fusion 360", personName: "15 db elérhető" },
+            { id: "sw7-4", value: "Revit", personName: "6 db elérhető" },
+            { id: "sw7-5", value: "SketchUp Pro", personName: "12 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw8", 
+        name: "Adatbázis kezelő", 
+        description: "Adatbázis szerver és menedzsment eszközök", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Microsoft SQL Server", "Oracle Database", "MySQL Enterprise", "PostgreSQL Enterprise", "MongoDB Atlas"]
+        },
+        sampleData: [
+            { id: "sw8-1", value: "SQL Server Enterprise", personName: "5 db elérhető" },
+            { id: "sw8-2", value: "Oracle Database EE", personName: "3 db elérhető" },
+            { id: "sw8-3", value: "MySQL Enterprise", personName: "10 db elérhető" },
+            { id: "sw8-4", value: "PostgreSQL Enterprise", personName: "8 db elérhető" },
+            { id: "sw8-5", value: "MongoDB Atlas", personName: "Korlátlan" },
+        ]
+    },
+    { 
+        id: "sw9", 
+        name: "VPN kliens", 
+        description: "Távoli hozzáférést biztosító szoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Cisco AnyConnect", "GlobalProtect", "FortiClient", "OpenVPN Access Server", "NordLayer"]
+        },
+        sampleData: [
+            { id: "sw9-1", value: "Cisco AnyConnect", personName: "200 db elérhető" },
+            { id: "sw9-2", value: "GlobalProtect", personName: "150 db elérhető" },
+            { id: "sw9-3", value: "FortiClient", personName: "100 db elérhető" },
+            { id: "sw9-4", value: "OpenVPN Access Server", personName: "50 db elérhető" },
+            { id: "sw9-5", value: "NordLayer", personName: "75 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw10", 
+        name: "Backup szoftver", 
+        description: "Adatmentési és visszaállítási megoldás", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Veeam Backup", "Acronis Cyber Protect", "Commvault", "Veritas NetBackup", "Nakivo"]
+        },
+        sampleData: [
+            { id: "sw10-1", value: "Veeam Backup & Replication", personName: "20 db elérhető" },
+            { id: "sw10-2", value: "Acronis Cyber Protect", personName: "30 db elérhető" },
+            { id: "sw10-3", value: "Commvault Complete", personName: "10 db elérhető" },
+            { id: "sw10-4", value: "Veritas NetBackup", personName: "5 db elérhető" },
+            { id: "sw10-5", value: "Nakivo Backup", personName: "15 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw11", 
+        name: "Felhő szolgáltatás", 
+        description: "Cloud platform hozzáférés", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Azure subscription", "AWS Account", "Google Cloud", "IBM Cloud", "Oracle Cloud"]
+        },
+        sampleData: [
+            { id: "sw11-1", value: "Azure Enterprise", personName: "Aktív előfizetés" },
+            { id: "sw11-2", value: "AWS Enterprise", personName: "Aktív előfizetés" },
+            { id: "sw11-3", value: "Google Cloud Platform", personName: "Aktív előfizetés" },
+            { id: "sw11-4", value: "IBM Cloud", personName: "Aktív előfizetés" },
+            { id: "sw11-5", value: "Oracle Cloud", personName: "Aktív előfizetés" },
+        ]
+    },
+    { 
+        id: "sw12", 
+        name: "Dokumentumkezelő", 
+        description: "Vállalati dokumentumkezelő rendszer", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["SharePoint", "Confluence", "Notion", "DocuWare", "M-Files"]
+        },
+        sampleData: [
+            { id: "sw12-1", value: "SharePoint Online", personName: "Korlátlan" },
+            { id: "sw12-2", value: "Confluence Cloud", personName: "100 db elérhető" },
+            { id: "sw12-3", value: "Notion Team", personName: "50 db elérhető" },
+            { id: "sw12-4", value: "DocuWare Cloud", personName: "30 db elérhető" },
+            { id: "sw12-5", value: "M-Files", personName: "25 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw13", 
+        name: "Virtualizáció", 
+        description: "Virtualizációs platform licenc", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["VMware vSphere", "Microsoft Hyper-V", "Citrix XenServer", "Proxmox VE", "Nutanix AHV"]
+        },
+        sampleData: [
+            { id: "sw13-1", value: "VMware vSphere Enterprise Plus", personName: "10 host elérhető" },
+            { id: "sw13-2", value: "Hyper-V Datacenter", personName: "15 host elérhető" },
+            { id: "sw13-3", value: "Citrix XenServer Premium", personName: "8 host elérhető" },
+            { id: "sw13-4", value: "Proxmox VE Enterprise", personName: "12 host elérhető" },
+            { id: "sw13-5", value: "Nutanix AHV", personName: "6 host elérhető" },
+        ]
+    },
+    { 
+        id: "sw14", 
+        name: "Monitoring szoftver", 
+        description: "Infrastruktúra és alkalmazás monitoring", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Datadog", "Splunk", "Dynatrace", "New Relic", "Zabbix Enterprise"]
+        },
+        sampleData: [
+            { id: "sw14-1", value: "Datadog Enterprise", personName: "Aktív előfizetés" },
+            { id: "sw14-2", value: "Splunk Enterprise", personName: "10 GB/nap" },
+            { id: "sw14-3", value: "Dynatrace", personName: "50 host elérhető" },
+            { id: "sw14-4", value: "New Relic", personName: "Aktív előfizetés" },
+            { id: "sw14-5", value: "Zabbix Enterprise", personName: "100 host elérhető" },
+        ]
+    },
+    { 
+        id: "sw15", 
+        name: "Grafikai szoftver", 
+        description: "Képszerkesztő és grafikai tervezőeszköz", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Figma", "Sketch", "Canva Pro", "Affinity Designer", "CorelDRAW"]
+        },
+        sampleData: [
+            { id: "sw15-1", value: "Figma Organization", personName: "30 db elérhető" },
+            { id: "sw15-2", value: "Sketch Team", personName: "15 db elérhető" },
+            { id: "sw15-3", value: "Canva Pro", personName: "50 db elérhető" },
+            { id: "sw15-4", value: "Affinity Designer", personName: "20 db elérhető" },
+            { id: "sw15-5", value: "CorelDRAW Graphics Suite", personName: "10 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw16", 
+        name: "Operációs rendszer", 
+        description: "Windows vagy egyéb OS licenc", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Windows 11 Pro", "Windows 11 Enterprise", "Windows Server 2022", "Red Hat Enterprise Linux", "macOS upgrade"]
+        },
+        sampleData: [
+            { id: "sw16-1", value: "Windows 11 Pro", personName: "200 db elérhető" },
+            { id: "sw16-2", value: "Windows 11 Enterprise", personName: "100 db elérhető" },
+            { id: "sw16-3", value: "Windows Server 2022 Datacenter", personName: "20 db elérhető" },
+            { id: "sw16-4", value: "Red Hat Enterprise Linux", personName: "50 db elérhető" },
+            { id: "sw16-5", value: "macOS (Apple Silicon)", personName: "30 db elérhető" },
+        ]
+    },
+    { 
+        id: "sw17", 
+        name: "E-mail kliens", 
+        description: "Levelezőprogram licenc", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Microsoft Outlook", "Mozilla Thunderbird Pro", "eM Client", "Mailbird Business", "Spike"]
+        },
+        sampleData: [
+            { id: "sw17-1", value: "Microsoft Outlook (M365)", personName: "Korlátlan" },
+            { id: "sw17-2", value: "eM Client Business", personName: "30 db elérhető" },
+            { id: "sw17-3", value: "Mailbird Business", personName: "25 db elérhető" },
+            { id: "sw17-4", value: "Spike", personName: "40 db elérhető" },
+            { id: "sw17-5", value: "Thunderbird + Extensions", personName: "Korlátlan" },
+        ]
+    },
+    { 
+        id: "sw18", 
+        name: "PDF szerkesztő", 
+        description: "PDF kezelő és szerkesztő szoftver", 
+        category: "software",
+        filterConfig: { 
+            type: "select",
+            options: ["Adobe Acrobat Pro", "Foxit PDF Editor", "Nitro Pro", "PDF-XChange Editor", "Smallpdf"]
+        },
+        sampleData: [
+            { id: "sw18-1", value: "Adobe Acrobat Pro DC", personName: "40 db elérhető" },
+            { id: "sw18-2", value: "Foxit PDF Editor Pro", personName: "30 db elérhető" },
+            { id: "sw18-3", value: "Nitro Pro", personName: "25 db elérhető" },
+            { id: "sw18-4", value: "PDF-XChange Editor", personName: "50 db elérhető" },
+            { id: "sw18-5", value: "Smallpdf Team", personName: "20 db elérhető" },
+        ]
+    },
+];
 
-export const allMockData: DataItem[] = [...studentData, ...employeeData];
+export const allMockData: DataItem[] = [...hardwareData, ...softwareData];
 
-export const getDataByCategories = (categories: ("student" | "employee")[]): DataItem[] => {
+export const getDataByCategories = (categories: ("hardware" | "software")[]): DataItem[] => {
     if (categories.length === 0) return [];
     return allMockData.filter(item => categories.includes(item.category));
 };

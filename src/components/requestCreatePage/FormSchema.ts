@@ -34,7 +34,7 @@ export const createRequestCreateFormSchema = (t: TFunction) => z.object({
         selectedOptions: z.array(z.string()).optional(),
     })).optional(),
 
-    selectedCategories: z.array(z.enum(["student", "employee"])).optional(),
+    selectedCategories: z.array(z.enum(["hardware", "software"])).optional(),
 
     requestReason: z.string().min(1, t("requestCreate.form.errors.requestReason")),
 

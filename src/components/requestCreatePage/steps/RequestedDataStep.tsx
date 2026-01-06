@@ -61,7 +61,7 @@ const RequestedDataStep: React.FC<RequestedDataStepProps> = ({
         return (showErrors || touchedFields.requestedData) && errors.requestedData;
     };
 
-    const handleCategoryToggle = (category: "student" | "employee") => {
+    const handleCategoryToggle = (category: "hardware" | "software") => {
         const newCategories = selectedCategories.includes(category)
             ? selectedCategories.filter((c: string) => c !== category)
             : [...selectedCategories, category];

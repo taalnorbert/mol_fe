@@ -26,6 +26,7 @@ const RequestCreatePage: React.FC = () => {
         handleSubmit,
         trigger,
         control,
+        reset,
         formState: { errors, touchedFields },
     } = useForm<RequestCreateFormData>({
         resolver: zodResolver(schema),
@@ -36,6 +37,11 @@ const RequestCreatePage: React.FC = () => {
         const { agreeTerms, selectedCategories, dataFilters, ...submitData } = data;
         console.log("Form data:", submitData);
         console.log("Data filters:", dataFilters);
+    };
+
+    const handleReset = () => {
+        reset();
+        setShowErrors({});
     };
 
     const createValidator = (fields: (keyof RequestCreateFormData)[], stepId: string) => {
@@ -161,6 +167,7 @@ const RequestCreatePage: React.FC = () => {
                 steps={wizardSteps}
                 onSubmit={handleSubmit(onSubmit)}
                 title={t("requestCreate.title")}
+                onReset={handleReset}
             />
         </div>
     );
