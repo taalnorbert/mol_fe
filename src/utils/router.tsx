@@ -8,7 +8,7 @@ export const router: RouterConfig = {
         
         {
             mode: "PROTECTED",
-            path: "/mol_fe",
+            path: "/mol_fe/",
             component: <RequestCreatePage/>,
             navbar: false,
         }
