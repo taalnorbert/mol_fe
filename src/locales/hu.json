@@ -1,0 +1,134 @@
+{
+    "sideBarOptions": {
+        "home": "Főoldal",
+        "newRequest": "Új adatlekérési kérelem",
+        "listRequests": "Adatlekérési kérelmeim"
+    },
+    "wizard": {
+        "next": "Tovább",
+        "back": "Vissza",
+        "submit": "Kérvény elküldése",
+        "submitting": "Küldés..."
+    },
+    "requestCreate": {
+        "title": "Törzsadatbázis - Adatigénylés",
+        "steps": {
+            "systemInfo": "Rendszer",
+            "systemInfoDescription": "Adja meg az adatkérő rendszer adatait",
+            "contactInfo": "Kontakt",
+            "contactInfoDescription": "Adja meg a felelős kontakt személy adatait",
+            "requestType": "Típus",
+            "requestTypeDescription": "Válassza ki az adatkérés típusát",
+            "requestTimeframe": "Időtartam",
+            "requestTimeframeDescription": "Válassza ki az adatkérés időtartamát",
+            "requestPeriod": "Időszak",
+            "requestPeriodDescription": "Adja meg az adatkérési időszak kezdetét",
+            "requestReason": "Indoklás",
+            "requestReasonDescription": "Adja meg az adatkérés indoklását",
+            "agreeTerms": "Feltételek",
+            "agreeTermsDescription": "Fogadja el a feltételeket a folytatáshoz",
+            "requestedData": "Adatok",
+            "requestedDataDescription": "Válassza ki az igényelt adatokat"
+        },
+        "requestedDataPlaceholder": "Az igényelt adatok kiválasztása ide kerül...",
+        "form": {
+            "serviceName": "Adatkérő rendszer neve",
+            "responsibleOrg": "Adatkérő rendszer üzemeltetésért felelős szervezet",
+            "responsiblePersonName": "Adatkérő rendszer üzemeltetésért felelős kontakt személy neve",
+            "responsiblePersonEmail": "Adatkérő rendszer üzemeltetésért felelős kontakt személy e-mail címe",
+            "requestType": "Adatkérés típusa",
+            "requestTypeOptions": {
+                "eseti": "Eseti",
+                "folyamatos": "Folyamatos"
+            },
+            "requestTimeframe": "Adatkérés időtartama",
+            "requestTimeframeOptions": {
+                "meghatarozott": "Meghatározott",
+                "folyamatosan": "Folyamatosan"
+            },
+            "requestPeriodStart": "Adatkérési időszak kezdete",
+            "requestReason": "Adatkérés indoklása",
+            "agreeTerms": "Az űrlap beküldésével elfogadom, hogy a kapcsolódó adatkezelési tájékoztatót köteles vagyok kiegészíteni az igényelt adatokkal.",
+            "dataScope": "Adatok köre",
+            "dataCategories": {
+                "student": "Hallgató",
+                "employee": "Alkalmazott"
+            },
+            "filterByName": "Szűrés név alapján",
+            "filterByNamePlaceholder": "Keress az adat nevére...",
+            "selectedCount": "Kiválasztva: {{count}} adat",
+            "activeFiltersCount": "Aktív szűrők: {{count}}",
+            "selectCategoryFirst": "Válasszon ki legalább egy kategóriát a fenti lehetőségek közül.",
+            "availableData": "Elérhető adatok",
+            "selectedData": "Kiválasztott adatok",
+            "allDataSelected": "Az összes elérhető adat ki van választva.",
+            "selectedDataTable": {
+                "filterColumn": "Szűrési feltételek",
+                "actionsColumn": "Műveletek",
+                "noFilter": "Nincs szűrő",
+                "editFilter": "Szűrő szerkesztése",
+                "remove": "Eltávolítás"
+            },
+            "filterSummary": {
+                "contains": "Tartalmazza",
+                "equals": "Egyezik",
+                "from": "Ettől",
+                "to": "Eddig"
+            },
+            "dataTable": {
+                "nameColumn": "Adat neve",
+                "descriptionColumn": "Leírás",
+                "selectAll": "Összes kiválasztása",
+                "noData": "Nincs megjeleníthető adat",
+                "filter": "Szűrő",
+                "filtered": "Szűrt",
+                "openFilter": "Szűrő megnyitása",
+                "actions": "Műveletek",
+                "remove": "Eltávolítás"
+            },
+            "filterModal": {
+                "title": "Szűrési feltételek",
+                "textContains": "Szöveg tartalmazza",
+                "textContainsPlaceholder": "Írja be a keresett szöveget...",
+                "textEquals": "Szöveg pontosan egyezik",
+                "textEqualsPlaceholder": "Írja be a pontos értéket...",
+                "numberEquals": "Szám pontosan egyezik",
+                "numberEqualsPlaceholder": "Pontos érték",
+                "numberMin": "Minimum érték",
+                "numberMinPlaceholder": "Legalább",
+                "numberMax": "Maximum érték",
+                "numberMaxPlaceholder": "Legfeljebb",
+                "dateEquals": "Dátum pontosan egyezik",
+                "dateFrom": "Dátum kezdete",
+                "dateTo": "Dátum vége",
+                "selectOptions": "Válasszon értékeket",
+                "noFiltersAvailable": "Ehhez az adattípushoz nem érhető el szűrés.",
+                "sampleData": "Mintaadatok",
+                "apply": "Alkalmaz",
+                "cancel": "Mégse",
+                "clearFilter": "Szűrő törlése"
+            },
+            "pagination": {
+                "showing": "Megjelenítve: {{start}}-{{end}} / {{total}}",
+                "previous": "Előző",
+                "next": "Következő"
+            },
+            "required": "Kötelező mező",
+            "requiredData": "Legalább egy adattípust ki kell választani",
+            "invalidEmail": "Érvénytelen e-mail cím",
+            "mustAgree": "El kell fogadnia a feltételeket",
+            "errors": {
+                "serviceName": "A rendszer neve kötelező",
+                "responsibleOrg": "A felelős szervezet megadása kötelező",
+                "responsiblePersonName": "A felelős személy neve kötelező",
+                "responsiblePersonEmail": "Érvénytelen e-mail cím",
+                "requestType": "Az adatkérés típusa kötelező",
+                "requestTimeframe": "Az adatkérés időtartama kötelező",
+                "requestPeriodStart": "Az adatkérési időszak kezdete kötelező",
+                "requestedData": "Legalább egy adattípust ki kell választani",
+                "requestReason": "Az adatkérés indoklása kötelező",
+                "agreeTerms": "El kell fogadnia a feltételeket"
+            }
+        }
+    }
+}

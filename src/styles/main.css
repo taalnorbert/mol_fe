@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  
+  --color-primary: #242943;
+  --color-primary-hover: #30354f;
+  --color-white: #ffffff;
+
+  --color-bg-page: #f9fafb;
+  --color-bg-card: #ffffff;
+  --color-bg-muted: #f3f4f6;
+  --color-bg-disabled: #f3f4f6;
+  --color-bg-error: #fef2f2;
+
+  --color-border-default: #d1d5db;
+  --color-border-light: #e5e7eb;
+  --color-border-error: #ef4444;
+
+  --color-text-primary: #374151;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-disabled: #9ca3af;
+  --color-text-placeholder: #6b7280;
+  --color-text-error: #ef4444;
+
+  --color-btn-secondary-bg: #e5e7eb;
+  --color-btn-secondary-bg-hover: #d1d5db;
+  --color-btn-secondary-text: #374151;
+  --color-btn-disabled-bg: #f3f4f6;
+  --color-btn-disabled-text: #9ca3af;
+
+  --color-ring-error: #fecaca;
+  --color-ring-primary: rgba(36, 41, 67, 0.3);
+
+  --animate-fadeIn: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

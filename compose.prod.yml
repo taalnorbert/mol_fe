@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/prod/Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL}
+    init: true
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:80"

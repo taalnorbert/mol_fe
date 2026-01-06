@@ -1,0 +1,27 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    init: true
+    restart: unless-stopped
+
+    develop:
+      watch:
+        - action: sync 
+          path: ./src 
+          target: /app/src
+        - action: rebuild 
+          path: ./public 
+          target: /app/public
+        - action: rebuild
+          path: ./package.json
+          target: /app/package.json
+        - action: rebuild
+          path: ./tsconfig.json
+          target: /app/tsconfig.json
+        
+    env_file:
+      - .env
+    ports:
+      - "80:80"
