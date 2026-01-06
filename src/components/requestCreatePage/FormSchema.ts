@@ -6,11 +6,11 @@ export const createRequestCreateFormSchema = (t: TFunction) => z.object({
     responsibleOrg: z.string().min(1, t("requestCreate.form.errors.responsibleOrg")),
     responsiblePersonName: z.string().min(1, t("requestCreate.form.errors.responsiblePersonName")),
     responsiblePersonEmail: z.string().email(t("requestCreate.form.errors.responsiblePersonEmail")),
-    
+
     requestType: z.enum(["eseti", "folyamatos"], {
         message: t("requestCreate.form.errors.requestType")
     }),
-    requestTimeframe: z.enum(["meghatározott", "folyamatosan"], {
+    requestTimeframe: z.number().min(0).max(100, {
         message: t("requestCreate.form.errors.requestTimeframe")
     }),
 

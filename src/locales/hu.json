@@ -11,53 +11,53 @@
         "submitting": "Küldés...",
         "success": {
             "title": "Sikeresen beküldve!",
-            "message": "Az igénylése sikeresen beküldésre került. Hamarosan értesítjük az elbírálás eredményéről.",
-            "newRequest": "Új igénylés létrehozása"
+            "message": "Sikeresen beküldésre került.",
+            "newRequest": "Új beküldés"
         }
     },
     "requestCreate": {
-        "title": "Minta - IT Eszközigénylés",
+        "title": "Minta",
         "steps": {
-            "systemInfo": "Projekt",
-            "systemInfoDescription": "Adja meg a projekt adatait",
-            "contactInfo": "Kontakt",
-            "contactInfoDescription": "Adja meg a felelős kontakt személy adatait",
-            "requestType": "Típus",
-            "requestTypeDescription": "Válassza ki az igénylés típusát",
-            "requestTimeframe": "Időtartam",
-            "requestTimeframeDescription": "Válassza ki az igénylés időtartamát",
-            "requestPeriod": "Időszak",
-            "requestPeriodDescription": "Adja meg az igénylés kezdő dátumát",
-            "requestReason": "Indoklás",
-            "requestReasonDescription": "Adja meg az igénylés indoklását",
-            "agreeTerms": "Feltételek",
-            "agreeTermsDescription": "Fogadja el a feltételeket a folytatáshoz",
-            "requestedData": "Eszközök",
-            "requestedDataDescription": "Válassza ki az igényelt eszközöket"
+            "systemInfo": "Minta1",
+            "systemInfoDescription": "Leírás",
+            "contactInfo": "Minta2",
+            "contactInfoDescription": "Leírás",
+            "requestType": "Minta3",
+            "requestTypeDescription": "Leírás",
+            "requestTimeframe": "Minta4",
+            "requestTimeframeDescription": "Leírás",
+            "requestPeriod": "Minta5",
+            "requestPeriodDescription": "Leírás",
+            "requestReason": "Minta6",
+            "requestReasonDescription": "Leírás",
+            "agreeTerms": "Minta7",
+            "agreeTermsDescription": "Leírás",
+            "requestedData": "Minta7",
+            "requestedDataDescription": "Leírás"
         },
         "requestedDataPlaceholder": "Az igényelt eszközök kiválasztása ide kerül...",
         "form": {
-            "serviceName": "Projekt neve",
-            "responsibleOrg": "Igénylő szervezeti egység",
-            "responsiblePersonName": "Igénylő személy neve",
-            "responsiblePersonEmail": "Igénylő személy e-mail címe",
-            "requestType": "Igénylés típusa",
+            "serviceName": "Mező1",
+            "responsibleOrg": "Mező2",
+            "responsiblePersonName": "Mező1",
+            "responsiblePersonEmail": "Mező2 (email)",
+            "requestType": "Mező (feleletválasztó)",
             "requestTypeOptions": {
-                "eseti": "Egyszeri",
-                "folyamatos": "Tartós"
+                "eseti": "Opció1",
+                "folyamatos": "Opció2"
             },
-            "requestTimeframe": "Igénylés időtartama",
+            "requestTimeframe": "Mező",
             "requestTimeframeOptions": {
                 "meghatarozott": "Meghatározott ideig",
                 "folyamatosan": "Határozatlan ideig"
             },
-            "requestPeriodStart": "Igénylés kezdete",
-            "requestReason": "Igénylés indoklása",
-            "agreeTerms": "Az igénylés beküldésével elfogadom, hogy az eszközök használatára vonatkozó szabályzatot betartom.",
+            "requestPeriodStart": "Dátum",
+            "requestReason": "Mező",
+            "agreeTerms": "Mező",
             "dataScope": "Eszköz kategória",
             "dataCategories": {
-                "hardware": "Hardver",
-                "software": "Szoftver"
+                "hardware": "Opció1",
+                "software": "Opció2"
             },
             "filterByName": "Szűrés név alapján",
             "filterByNamePlaceholder": "Keress az eszköz nevére...",
@@ -123,16 +123,16 @@
             "invalidEmail": "Érvénytelen e-mail cím",
             "mustAgree": "El kell fogadnia a feltételeket",
             "errors": {
-                "serviceName": "A projekt neve kötelező",
-                "responsibleOrg": "Az igénylő szervezeti egység megadása kötelező",
-                "responsiblePersonName": "Az igénylő személy neve kötelező",
-                "responsiblePersonEmail": "Érvénytelen e-mail cím",
-                "requestType": "Az igénylés típusa kötelező",
-                "requestTimeframe": "Az igénylés időtartama kötelező",
-                "requestPeriodStart": "Az igénylés kezdő dátuma kötelező",
-                "requestedData": "Legalább egy eszközt ki kell választani",
-                "requestReason": "Az igénylés indoklása kötelező",
-                "agreeTerms": "El kell fogadnia a feltételeket"
+                "serviceName": "Hibás mező",
+                "responsibleOrg": "Hibás mező",
+                "responsiblePersonName": "Hibás mező",
+                "responsiblePersonEmail": "Hibás mező",
+                "requestType": "Hibás mező",
+                "requestTimeframe": "Hibás mező",
+                "requestPeriodStart": "Hibás mező",
+                "requestedData": "Hibás mező",
+                    "requestReason": "Hibás mező",
+                "agreeTerms": "Hibás mező"
             }
         }
     }

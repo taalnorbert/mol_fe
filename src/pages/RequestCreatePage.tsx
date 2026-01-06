@@ -103,7 +103,7 @@ const RequestCreatePage: React.FC = () => {
                     title={t("requestCreate.steps.requestTimeframe")}
                     description={t("requestCreate.steps.requestTimeframeDescription")}
                 >
-                    <RequestDurationStep register={register} errors={errors} showErrors={!!showErrors.requestTimeframe} touchedFields={touchedFields} />
+                    <RequestDurationStep control={control} errors={errors} showErrors={!!showErrors.requestTimeframe} touchedFields={touchedFields} />
                 </WizardStepComponent>
             ),
         },
@@ -145,24 +145,11 @@ const RequestCreatePage: React.FC = () => {
                     <RequestedDataStep control={control} errors={errors} showErrors={!!showErrors.requestedData} touchedFields={touchedFields} />
                 </WizardStepComponent>
             ),
-        },
-        {
-            id: "agreeTerms",
-            title: t("requestCreate.steps.agreeTerms"),
-            validate: createValidator(["agreeTerms"], "agreeTerms"),
-            content: (
-                <WizardStepComponent
-                    title={t("requestCreate.steps.agreeTerms")}
-                    description={t("requestCreate.steps.agreeTermsDescription")}
-                >
-                    <AgreeTermsStep register={register} errors={errors} showErrors={!!showErrors.agreeTerms} touchedFields={touchedFields} />
-                </WizardStepComponent>
-            ),
-        },
+        }
     ];
 
     return (
-        <div className="py-4 sm:py-6 lg:py-0">
+        <div className="">
             <WizardContainer
                 steps={wizardSteps}
                 onSubmit={handleSubmit(onSubmit)}

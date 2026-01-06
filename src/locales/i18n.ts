@@ -6,18 +6,18 @@ import hu from "@/locales/hu.json";
 import en from '@/locales/en.json';
 
 i18n.use(LanguageDetector)
-    .use(initReactI18next)
+  .use(initReactI18next)
 
-    .init({
-        fallbackLng: 'en',
-        lng: localStorage.getItem("LOCALIZATION_LANGUAGE") ?? "hu",
-        resources: {
-          en: { translation: en },
-          hu: { translation: hu },
-        },
-        interpolation: {
-          escapeValue: false,
-        },
-    })
+  .init({
+    fallbackLng: 'hu',
+    lng: "hu",
+    resources: {
+      en: { translation: en },
+      hu: { translation: hu },
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  })
 
 export default i18n;
