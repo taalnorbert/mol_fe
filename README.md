@@ -1,4 +1,4 @@
-# SZE Központi Nyílvántartó rendszer - Jogosultságkezelő Applikácó Webes felület
+# Minta - IT eszközigénylés
 
 ## Environment variables
 VITE_API_URL: Server URL
